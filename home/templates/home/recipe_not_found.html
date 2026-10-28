@@ -1,0 +1,10 @@
+
+{% extends "home/base.html" %}
+
+{% block content %}
+
+    <h1>Recipe not found</h1>
+    <p>Sorry, this recipe does not exist.</p>
+    <a href="{% url 'index' %}">Back to home</a>
+
+{% endblock %}

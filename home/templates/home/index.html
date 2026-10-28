@@ -1,0 +1,21 @@
+
+{% extends "home/base.html" %}
+
+
+{% block content %}
+    <h1>Recipes</h1>
+    {% if recipes %}
+        <ul>
+            {% for recipe in recipes %}
+                <li>
+                    <h1><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.name }}</a></h1>
+                    <p>Description: {{ recipe.description }}</p>
+                    <p>Cooking time: {{ recipe.time }} minutes</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recipes available yet.</p>
+    {% endif %}
+
+{% endblock %}
